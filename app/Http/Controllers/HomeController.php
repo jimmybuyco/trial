@@ -11,17 +11,17 @@ use Illuminate\Http\App;
 
 class HomeController extends BaseController
 {
-    public function home(){
+    public function home()
+    {
         return view('blades.default.login');
     }
 
     public function addBill(Request $request)
     {
-    	if ($request->isMethod('post')) {
-    		dd('POST');
-    	} else {
-    		$billers = \App\Bill::all();
-        	return view('blades.default.addBill', ['test' => $billers]);
-    	}
+        if ($request->isMethod('post')) {
+            dd('POST');
+        } else {
+            return view('blades.default.addBill');
+        }
     }
 }
