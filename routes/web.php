@@ -15,6 +15,5 @@
 //    return view('welcome');
 //});
 
-Route::get('/','HomeController@home');
-
-
+Route::get('/', 'HomeController@home');
+Route::match(['get', 'post'], '/addBill', 'HomeController@addBill');
