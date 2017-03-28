@@ -43,3 +43,36 @@
     </div>
 
 <?php include resource_path('views/layouts/default/footer.blade.php'); ?>
+
+<script type="text/javascript">
+    var addBill = new Vue({
+        el: '#biller-field',
+        data: {
+            categories: [],
+            billers: []
+        },
+        methods: {
+            getCategory: function (e) {
+                $.ajax({
+                    url: 'get-all-category',
+                    method: 'get',
+                    success: function(e) {
+                        addBill.categories = e;
+                    }
+                });
+            },
+            getBiller: function (e) {
+                $.ajax({
+                    url: 'get-all-biller',
+                    method: 'get',
+                    success: function(e) {
+                        addBill.billers = e;
+                    }
+                });
+            }
+        }
+    });
+
+    addBill.getCategory();
+    addBill.getBiller();
+</script>
