@@ -22,6 +22,12 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
+        $user = new \App\User();
+        $user->name='admin';
+        $user->email='email';
+        $user->password='password';
+        $user->save();
+
 
     }
 
