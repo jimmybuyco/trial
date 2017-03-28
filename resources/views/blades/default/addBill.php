@@ -1,4 +1,4 @@
-<?php include 'header.blade.php'; ?>
+<?php include resource_path('views/layouts/default/header.blade.php'); ?>
 
     <div class="container">
         <div id="example-1">
@@ -26,4 +26,4 @@
         </div>
     </div>
 
-<?php include 'footer.blade.php'; ?>
+<?php include resource_path('views/layouts/default/footer.blade.php'); ?>
