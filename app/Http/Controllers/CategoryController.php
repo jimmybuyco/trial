@@ -19,6 +19,7 @@ class CategoryController extends Controller
 
             return $category = array(
                 'name'=>Input::get("name"),
+                'id'=>$category->id,
                 'description'=>Input::get("desc"),
             );
         } else {
