@@ -22,7 +22,7 @@
             },
             getBiller: function (e) {
                 $.ajax({
-                    url: 'getAllBiller',
+                    url: 'get-all-biller',
                     method: 'get',
                     success: function(e) {
                         example1.billers = e;
