@@ -21,7 +21,7 @@ class HomeController extends BaseController
         if ($request->isMethod('post')) {
             dd('POST');
         } else {
-            return view('blades.default.addBill');
+            return view('blades.default.add-bill');
         }
     }
 }
