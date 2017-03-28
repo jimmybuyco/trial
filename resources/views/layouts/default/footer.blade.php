@@ -10,27 +10,34 @@
 </html>
 
 <script type="text/javascript">
-    var example1 = new Vue({
-        el: '#example-1',
+    var addBill = new Vue({
+        el: '#biller-field',
         data: {
-            ctr: 0,
+            categories: [],
             billers: []
         },
         methods: {
-            submit: function (e) {
-                alert('Hello ' + this.name + '!');
+            getCategory: function (e) {
+                $.ajax({
+                    url: 'get-all-category',
+                    method: 'get',
+                    success: function(e) {
+                        addBill.categories = e;
+                    }
+                });
             },
             getBiller: function (e) {
                 $.ajax({
                     url: 'get-all-biller',
                     method: 'get',
                     success: function(e) {
-                        example1.billers = e;
+                        addBill.billers = e;
                     }
                 });
             }
         }
     });
 
-    example1.getBiller();
+    addBill.getCategory();
+    addBill.getBiller();
 </script>
