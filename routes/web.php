@@ -6,6 +6,6 @@ Route::match(['get', 'post'], '/add-category',   'CategoryController@addCatergor
 
 Route::match(['get', 'post'], '/get-all-biller', 'BillerController@getAllBiller');
 Route::match(['get', 'post'], '/get-all-category', 'CategoryController@getAllCategory');
-Auth::routes();
+
 
 Route::get('/home', 'HomeController@index');
