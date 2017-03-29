@@ -40,16 +40,15 @@
                 </form>
             </div>
 
-            <div class="col-md-8">
+            <div class="col-md-8 row">
 
-                        <div  v-for="bill of allBills">
-                            <div style="border: 1px solid black;width:200px;display: inline-block">
+                            <div class="col-md-3" style="border: 1px solid black;" v-for="bill of allBills">
                                 <h1>{{ bill.billersName }}</h1>
                                 <h3>{{ bill.categoriesName }}</h3>
                                 <p>{{ bill.account_number }}</p>
                                 <p>{{ bill.amount }}</p>
-                        </div>
-                        </div>
+                            </div>
+
         </div>
     </div>
 
