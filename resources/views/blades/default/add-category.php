@@ -20,10 +20,10 @@
                 <td>Name</td>
                 <td>Description</td>
             </tr>
-            <tr v-for="category of categories">
-                <td>{{category.id}}</td>
-                <td>{{category.name}}</td>
-                <td>{{category.description}}</td>
+            <tr v-for="categoryrow of categories">
+                <td><div v-bind:onload='getdata(categoryrow.id)'>
+
+                </div></td>
             </tr>
         </table>
     </div>
@@ -46,9 +46,9 @@
                     url: 'add-category?name=' + this.categoryname + "&desc=" + this.categorydescription,
                     type: 'post',
                     success: function (e) {
-                        categoryVue.categories.unshift(e)
-                        categoryVue.categoryname='';
-                        categoryVue.categorydescription='';
+                        categoryVue.categories.unshift(e);
+                        categoryVue.categoryname = '';
+                        categoryVue.categorydescription = '';
                     }
                 });
             },
@@ -60,9 +60,16 @@
                         categoryVue.categories = e;
                     }
                 });
+            },
+            getdata: function (id) {
+                console.log(id);
             }
         }
     });
 
     categoryVue.getCategories();
+
+//    function getdata(id){
+//        console.log(id);
+//    }
 </script>

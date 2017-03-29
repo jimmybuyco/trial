@@ -18,14 +18,37 @@ class DatabaseSeeder extends Seeder
         ]);
 
        	DB::table('categories')->insert([
-            'name' 		  => 'Utilities',
-            'description' => 'All Utilities'
+       	    [
+                'name' 		  => 'Utilities',
+                'description' => 'All Utilities'
+            ],
+       	    [
+                'name' 		  => 'Telecomm',
+                'description' => 'All Telecomm'
+            ]
         ]);
 
        	DB::table('billers')->insert([
-            'name' 		  => 'Meralco',
-            'description' => 'Meralco Bill',
-            'category' 	  => 1
+       	    [
+                'name' 		  => 'Meralco',
+                'description' => 'Meralco Bill',
+                'category_id' 	  => 1
+            ],
+       	    [
+                'name' 		  => 'Maynilad',
+                'description' => 'Maynilad Bill',
+                'category_id' 	  => 1
+            ],
+       	    [
+                'name' 		  => 'Globe',
+                'description' => 'Globe Bill',
+                'category_id' 	  => 2
+            ],
+       	    [
+                'name' 		  => 'Smart',
+                'description' => 'Smart Bill',
+                'category_id' 	  => 2
+            ],
         ]);
     }
 }
