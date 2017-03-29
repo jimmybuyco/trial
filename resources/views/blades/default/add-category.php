@@ -14,16 +14,16 @@
         </table>
         <button type="button" v-on:click="submit">Submit</button>
         <hr>
-        <table border="1">
+        <table border="1" id="tblCategory">
             <tr>
                 <td>Id</td>
                 <td>Name</td>
                 <td>Description</td>
             </tr>
-            <tr v-for="category of categories">
-                <td>{{category.id}}</td>
-                <td>{{category.name}}</td>
-                <td>{{category.description}}</td>
+            <tr v-for="categoryrow of categories">
+                <td>{{categoryrow.id}}</td>
+                <td>{{categoryrow.name}}</td>
+                <td>{{categoryrow.description}}</td>
             </tr>
         </table>
     </div>
@@ -60,9 +60,17 @@
                         categoryVue.categories = e;
                     }
                 });
+            },
+            getdata: function (id) {
+//                console.log(id+"jimmy");
+                $("#category"+id).html(id);
             }
         }
     });
 
     categoryVue.getCategories();
+
+//    function getdata(id){
+//        console.log(id);
+//    }
 </script>
