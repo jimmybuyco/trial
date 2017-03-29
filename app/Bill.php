@@ -17,10 +17,10 @@ class Bill extends Model
     public function getAllBills()
     {
         return DB::table($this->table)
-//            ->leftJoin('billers', 'bills.biller_id', '=', 'billers.id')
-//            ->leftJoin('categories', 'billers.category_id', '=', 'categories.id')
+            // ->leftJoin('billers', 'bills.biller_id', '=', 'billers.id')
+            // ->leftJoin('categories', 'billers.category_id', '=', 'categories.id')
             ->where('status', 1)
-//            ->select('account_number', 'amount', 'billers.name AS billersName', 'categories.name AS categoriesName')
+            // ->select('account_number', 'amount', 'billers.name AS billersName', 'categories.name AS categoriesName')
             ->get();
     }
 }
