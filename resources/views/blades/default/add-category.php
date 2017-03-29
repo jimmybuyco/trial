@@ -46,9 +46,9 @@
                     url: 'add-category?name=' + this.categoryname + "&desc=" + this.categorydescription,
                     type: 'post',
                     success: function (e) {
-                        categoryVue.categories.unshift(e)
-                        categoryVue.categoryname='';
-                        categoryVue.categorydescription='';
+                        categoryVue.categories.unshift(e);
+                        categoryVue.categoryname = '';
+                        categoryVue.categorydescription = '';
                     }
                 });
             },
