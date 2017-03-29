@@ -14,16 +14,16 @@
         </table>
         <button type="button" v-on:click="submit">Submit</button>
         <hr>
-        <table border="1">
+        <table border="1" id="tblCategory">
             <tr>
                 <td>Id</td>
                 <td>Name</td>
                 <td>Description</td>
             </tr>
             <tr v-for="categoryrow of categories">
-                <td><div v-bind:onload='getdata(categoryrow.id)'>
-
-                </div></td>
+                <td>{{categoryrow.id}}</td>
+                <td>{{categoryrow.name}}</td>
+                <td>{{categoryrow.description}}</td>
             </tr>
         </table>
     </div>
@@ -62,7 +62,8 @@
                 });
             },
             getdata: function (id) {
-                console.log(id);
+//                console.log(id+"jimmy");
+                $("#category"+id).html(id);
             }
         }
     });
