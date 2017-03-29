@@ -13,6 +13,11 @@ class BillerController extends Controller
 
     public function getAllBiller()
     {
-        return response()->json(\App\Bill::get());
+        return response()->json(\App\Biller::get());
+    }
+
+    public function getSingleBiller($catId)
+    {
+        return response()->json(\App\Biller::where('category_id', $catId)->get());
     }
 }

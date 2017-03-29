@@ -9,7 +9,6 @@
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/vue2.js"></script>
-    <script src="js/jquery.form.js"></script>
 </head>
 <body>
 
