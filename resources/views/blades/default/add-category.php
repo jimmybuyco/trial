@@ -20,10 +20,10 @@
                 <td>Name</td>
                 <td>Description</td>
             </tr>
-            <tr v-for="category of categories">
-                <td>{{category.id}}</td>
-                <td>{{category.name}}</td>
-                <td>{{category.description}}</td>
+            <tr v-for="categoryrow of categories">
+                <td><div v-bind:onload='getdata(categoryrow.id)'>
+
+                </div></td>
             </tr>
         </table>
     </div>
@@ -60,9 +60,16 @@
                         categoryVue.categories = e;
                     }
                 });
+            },
+            getdata: function (id) {
+                console.log(id);
             }
         }
     });
 
     categoryVue.getCategories();
+
+//    function getdata(id){
+//        console.log(id);
+//    }
 </script>
