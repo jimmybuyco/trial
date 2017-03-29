@@ -41,29 +41,15 @@
             </div>
 
             <div class="col-md-8">
-                <table class="table table-responsive table-bordered">
-                    <thead>
-                    <tr>
-                        <td>Category</td>
-                        <td>Bill</td>
-                        <td>Amount</td>
-                        <td>Account Number</td>
-                    </tr>
-                    </thead>
 
-                    <tbody>
-                    <tr v-if="allBills.length == 0">
-                        <td colspan="4" align="center">No data found.</td>
-                    </tr>
-                    <tr v-for="bill of allBills">
-                        <td>{{ bill.categoriesName }}</td>
-                        <td>{{ bill.billersName }}</td>
-                        <td>{{ bill.amount }}</td>
-                        <td>{{ bill.account_number }}</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+                        <div  v-for="bill of allBills">
+                            <div style="border: 1px solid black;width:200px;display: inline-block">
+                                <h1>{{ bill.billersName }}</h1>
+                                <h3>{{ bill.categoriesName }}</h3>
+                                <p>{{ bill.account_number }}</p>
+                                <p>{{ bill.amount }}</p>
+                        </div>
+                        </div>
         </div>
     </div>
 
