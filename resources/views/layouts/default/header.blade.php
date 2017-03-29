@@ -10,6 +10,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/vue2.js"></script>
     <script src="js/jquery.form.js"></script>
+    <script src="js/vue-resource.js"></script>
 </head>
 <body>
 
