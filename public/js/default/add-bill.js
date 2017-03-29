@@ -13,11 +13,13 @@ $(function() {
             allBills: [],
             categories: [],
             billers: [],
+            billersList: [],
             accountNo: '',
             amount: '',
             selectedCat: '',
             billerId: ''
         },
+
         methods: {
             getAllBills: function () {
                 $.ajax({
@@ -34,6 +36,7 @@ $(function() {
                     method: 'get',
                     success: function(result) {
                         addBill.categories = result;
+
                     }
                 });
             },
@@ -48,6 +51,16 @@ $(function() {
                     method: 'get',
                     success: function(result) {
                         addBill.billers = result;
+                    }
+                });
+            },getAllBiller: function (catId) {
+                $('#biller').removeAttr('disabled');
+
+                $.ajax({
+                    url: 'get-all-biller',
+                    method: 'get',
+                    success: function(result) {
+                        addBill.billersList = result;
                     }
                 });
             },
@@ -74,5 +87,6 @@ $(function() {
 
     addBill.getAllBills();
     addBill.getCategory();
+    addBill.getAllBiller();
 
 });
