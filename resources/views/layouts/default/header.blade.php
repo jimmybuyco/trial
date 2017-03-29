@@ -13,16 +13,16 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default navbar-static-top jimmy-navbar navbar-xs">
+<nav class="navbar navbar-inverse navbar-static-top">
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Jimmy Theme</a>
         </div>
 
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Bill</a></li>
-            <li><a href="#">Biller</a></li>
-            <li><a href="#">Category</a></li>
+            <li><a href="<?php echo URL::to('/add-bill') ?>">Bill</a></li>
+            <li><a href="<?php echo URL::to('/add-biller') ?>">Biller</a></li>
+            <li><a href="<?php echo URL::to('/add-category') ?>">Category</a></li>
         </ul>
     </div>
 </nav>
