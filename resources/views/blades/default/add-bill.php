@@ -1,9 +1,9 @@
 <?php include resource_path('views/layouts/default/header.blade.php'); ?> <br>
 
     <div class="container">
-        <div class="row" id="biller-field">
+        <div class="row" id="bill-field">
             <div class="col-md-4">
-                <form>
+                <form class="well">
                     <div class="form-group">
                         <label for="category">Categories</label>
                         <select id="category" class="form-control" v-model="selectedCat" v-on:change="categoryChange">

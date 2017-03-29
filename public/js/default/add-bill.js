@@ -8,7 +8,7 @@ $(function() {
 
 
     var addBill = new Vue({
-        el: '#biller-field',
+        el: '#bill-field',
         data: {
             allBills: [],
             categories: [],
@@ -21,7 +21,7 @@ $(function() {
         methods: {
             getAllBills: function () {
                 $.ajax({
-                    url: 'get-all-bills',
+                    url: 'get-all-bill',
                     method: 'get',
                     success: function(result) {
                         addBill.allBills = result;
