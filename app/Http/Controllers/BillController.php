@@ -37,7 +37,7 @@ class BillController extends Controller
             $this->billModel->status = 1;
             $this->billModel->save();
 
-            return response()->json($this->getAllBill());
+            return $this->getAllBill();
         } else {
             return view('blades.default.add-bill');
         }
