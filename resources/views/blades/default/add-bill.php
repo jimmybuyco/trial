@@ -1,7 +1,7 @@
 <?php include resource_path('views/layouts/default/header.blade.php'); ?> <br>
 
     <div class="container">
-        <div class="row" id="bill-field">
+        <div class="row" id="bill-field" >
             <div class="col-md-4">
                 <form class="well">
                     <div class="form-group">
@@ -40,13 +40,13 @@
                 </form>
             </div>
 
-            <div class="col-md-8 row">
+            <div class="col-md-8 row" style="overflow: scroll;height:500px;border: 1px solid black;">
 
-                            <div class="col-md-3" style="border: 1px solid black;" v-for="bill of allBills">
-                                <h1>{{ bill.billersName }}</h1>
-                                <h3>{{ bill.categoriesName }}</h3>
-                                <p>{{ bill.account_number }}</p>
-                                <p>{{ bill.amount }}</p>
+                            <div class="col-md-2" style="border: 1px solid black;margin: 10px" v-for="bill of allBills">
+                                <h5>{{ bill.biller_id }}</h5>
+<!--                                <h6>{{ bill.categoriesName }}</h6>-->
+                                <h6>{{ bill.account_number }}<h6>
+                                <h6>{{ bill.amount }}<h6>
                             </div>
 
         </div>
