@@ -47,7 +47,7 @@
                     <tr v-for="biller of allBiller">
                         <td>{{ biller.name }}</td>
                         <td>{{ biller.description }}</td>
-                        <td>{{ biller.categoriesName }}</td>
+                        <td>{{ biller.categoriesName }} Biller.php - uncomment leftJoin</td>
                     </tr>
                     </tbody>
                 </table>
