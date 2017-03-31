@@ -17,8 +17,8 @@ class Biller extends Model
     public function getAllBiller()
     {
         return DB::table($this->table)
-//            ->leftJoin('categories', $this->table . '.category_id', '=', 'categories.id')
-//            ->select($this->table . '.name', $this->table . '.description', 'categories.name AS categoriesName')
+            // ->leftJoin('categories', $this->table . '.category_id', '=', 'categories.id')
+            // ->select($this->table . '.name', $this->table . '.description', 'categories.name AS categoriesName')
             ->get();
     }
 }
