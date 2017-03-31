@@ -2,7 +2,7 @@
  * Created by Alfredo on 3/28/2017.
  */
 
-$(function() {
+$(function () {
 
     $('#biller').attr('disabled', 'disabled');
 
@@ -18,14 +18,41 @@ $(function() {
             amount: '',
             selectedCat: '',
             billerId: ''
+
         },
 
         methods: {
+            billerName: function (id) {
+                name = '';
+                this.billersList.forEach(function (element) {
+                    if (element.id == id) {
+                        name = element.name;
+                    }
+                });
+                return name;
+            },
+            categoryName: function (id) {
+                categoryId = '';
+                addBill.billersList.forEach(function (element) {
+                    if (element.id == id) {
+                        categoryId=element.category_id;
+                        addBill.categories.forEach(function (elements) {
+                            categoryId = elements.name;
+                            console.log(element.name);
+                            if (elements.id == categoryId) {
+//
+                                categoryId = elements.name;
+                            }
+                        });
+                    }
+                });
+                return categoryId;
+            },
             getAllBills: function () {
                 $.ajax({
                     url: 'get-all-bill',
                     method: 'get',
-                    success: function(result) {
+                    success: function (result) {
                         addBill.allBills = result;
                     }
                 });
@@ -34,7 +61,7 @@ $(function() {
                 $.ajax({
                     url: 'get-all-category',
                     method: 'get',
-                    success: function(result) {
+                    success: function (result) {
                         addBill.categories = result;
 
                     }
@@ -49,17 +76,17 @@ $(function() {
                 $.ajax({
                     url: 'get-biller/' + catId,
                     method: 'get',
-                    success: function(result) {
+                    success: function (result) {
                         addBill.billers = result;
                     }
                 });
-            },getAllBiller: function (catId) {
+            }, getAllBiller: function (catId) {
                 $('#biller').removeAttr('disabled');
 
                 $.ajax({
                     url: 'get-all-biller',
                     method: 'get',
-                    success: function(result) {
+                    success: function (result) {
                         addBill.billersList = result;
                     }
                 });
