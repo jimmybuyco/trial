@@ -6,6 +6,7 @@ Route::match(['get', 'post'], '/add-category',          'CategoryController@addC
 Route::match(['get', 'post'], '/get-all-category',      'CategoryController@getAllCategory');
 
 Route::match(['get', 'post'], '/add-bill',              'BillController@addBill');
+Route::match(['get', 'post'], '/delete-bill',              'BillController@deleteBill');
 Route::match(['get', 'post'], '/get-all-bill',          'BillController@getAllBill');
 
 Route::match(['get', 'post'], '/add-biller',            'BillerController@addBiller');

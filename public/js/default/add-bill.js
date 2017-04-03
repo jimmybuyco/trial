@@ -18,9 +18,7 @@ $(function () {
             amount: '',
             selectedCat: '',
             billerId: ''
-
         },
-
         methods: {
             billerName: function (id) {
                 name = '';
@@ -38,9 +36,7 @@ $(function () {
                         categoryId=element.category_id;
                         addBill.categories.forEach(function (elements) {
                             categoryId = elements.name;
-                            console.log(element.name);
                             if (elements.id == categoryId) {
-//
                                 categoryId = elements.name;
                             }
                         });
@@ -63,7 +59,6 @@ $(function () {
                     method: 'get',
                     success: function (result) {
                         addBill.categories = result;
-
                     }
                 });
             },
@@ -72,12 +67,10 @@ $(function () {
             },
             getBiller: function (catId) {
                 $('#biller').removeAttr('disabled');
-
-                $.ajax({
-                    url: 'get-biller/' + catId,
-                    method: 'get',
-                    success: function (result) {
-                        addBill.billers = result;
+                addBill.billers=[];
+                this.billersList.forEach(function (element) {
+                    if (element.category_id == catId) {
+                        addBill.billers.unshift(element);
                     }
                 });
             }, getAllBiller: function (catId) {
@@ -106,6 +99,18 @@ $(function () {
                         addBill.amount = '';
                         addBill.selectedCat = '';
                         addBill.billerId = '';
+                    }
+                });
+            },
+            deleteBill: function (id) {
+                $.ajax({
+                    url: 'delete-bill',
+                    type: 'post',
+                    data: {
+                        billId: id
+                    },
+                    success: function (result) {
+                        addBill.allBills = result;
                     }
                 });
             }

@@ -21,6 +21,7 @@ class Bill extends Model
             // ->leftJoin('categories', 'billers.category_id', '=', 'categories.id')
             ->where('status', 1)
             // ->select('account_number', 'amount', 'billers.name AS billersName', 'categories.name AS categoriesName')
+            ->take(10)
             ->get();
     }
 }

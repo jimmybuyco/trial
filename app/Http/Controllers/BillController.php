@@ -28,6 +28,11 @@ class BillController extends Controller
         return response()->json($this->billModel->getAllBills());
     }
 
+    public function deleteBill(){
+        $bill = Bill::find(Input::get("billId"));
+        $bill->delete();
+        return $this->getAllBill();
+    }
     public function addBill(Request $request)
     {
         if ($request->isMethod('post')) {
