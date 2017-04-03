@@ -3,10 +3,7 @@
  */
 
 $(function () {
-
     $('#biller').attr('disabled', 'disabled');
-
-
     var addBill = new Vue({
         el: '#bill-field',
         data: {
@@ -33,9 +30,8 @@ $(function () {
                 categoryId = '';
                 addBill.billersList.forEach(function (element) {
                     if (element.id == id) {
-                        categoryId=element.category_id;
+                        categoryId = element.category_id;
                         addBill.categories.forEach(function (elements) {
-                            categoryId = elements.name;
                             if (elements.id == categoryId) {
                                 categoryId = elements.name;
                             }
@@ -67,7 +63,7 @@ $(function () {
             },
             getBiller: function (catId) {
                 $('#biller').removeAttr('disabled');
-                addBill.billers=[];
+                addBill.billers = [];
                 this.billersList.forEach(function (element) {
                     if (element.category_id == catId) {
                         addBill.billers.unshift(element);
@@ -120,5 +116,4 @@ $(function () {
     addBill.getAllBills();
     addBill.getCategory();
     addBill.getAllBiller();
-
 });
