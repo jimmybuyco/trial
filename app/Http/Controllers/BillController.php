@@ -24,9 +24,10 @@ class BillController extends Controller
     }
 
     public function getAllBill()
-    {
-        return response()->json($this->billModel->getAllBills());
-    }
+{
+    return response()->json($this->billModel->getAllBills());
+}
+
 
     public function deleteBill(){
         $bill = Bill::find(Input::get("billId"));

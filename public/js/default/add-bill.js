@@ -17,29 +17,7 @@ $(function () {
             billerId: ''
         },
         methods: {
-            billerName: function (id) {
-                name = '';
-                this.billersList.forEach(function (element) {
-                    if (element.id == id) {
-                        name = element.name;
-                    }
-                });
-                return name;
-            },
-            categoryName: function (id) {
-                categoryId = '';
-                addBill.billersList.forEach(function (element) {
-                    if (element.id == id) {
-                        categoryId = element.category_id;
-                        addBill.categories.forEach(function (elements) {
-                            if (elements.id == categoryId) {
-                                categoryId = elements.name;
-                            }
-                        });
-                    }
-                });
-                return categoryId;
-            },
+
             getAllBills: function () {
                 $.ajax({
                     url: 'get-all-bill',
@@ -112,6 +90,7 @@ $(function () {
             }
         }
     });
+
 
     addBill.getAllBills();
     addBill.getCategory();
