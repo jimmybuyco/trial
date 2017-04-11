@@ -4,6 +4,7 @@
 
 $(function () {
     $('#biller').attr('disabled', 'disabled');
+
     var addBill = new Vue({
         el: '#bill-field',
         data: {
@@ -17,7 +18,6 @@ $(function () {
             billerId: ''
         },
         methods: {
-
             getAllBills: function () {
                 $.ajax({
                     url: 'get-all-bill',
@@ -47,7 +47,8 @@ $(function () {
                         addBill.billers.unshift(element);
                     }
                 });
-            }, getAllBiller: function (catId) {
+            },
+            getAllBiller: function () {
                 $('#biller').removeAttr('disabled');
 
                 $.ajax({
